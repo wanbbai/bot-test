@@ -6,6 +6,23 @@
 </head>
 <body>
     <h1>SRT 연습용 페이지</h1>
-    <p>현재 상태: 예약하기</p>
+
+    <!-- 상태가 표시될 영역 -->
+    <p id="status">현재 상태: 매진</p>
+
+    <!-- 조회하기 버튼 -->
+    <button id="search-btn">조회하기</button>
+
+    <!-- 간단한 스크립트: 버튼을 누르면 상태를 바꿈 -->
+    <script>
+        document.getElementById("search-btn").addEventListener("click", function () {
+            const statusEl = document.getElementById("status");
+            if (statusEl.textContent.includes("매진")) {
+                statusEl.textContent = "현재 상태: 예약 가능";
+            } else {
+                statusEl.textContent = "현재 상태: 매진";
+            }
+        });
+    </script>
 </body>
 </html>
